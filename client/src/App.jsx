@@ -1,11 +1,17 @@
 /* eslint-disable no-undef */
+
+import Header from "./components/header/Header";
+
 /* eslint-disable no-unused-vars */
 function App() {
-
   return (
-    <>
-      <h1>Games play</h1>
-    </>
+    <div id="box">
+      <Header />
+
+      <main id="main-content">
+        
+      </main>
+    </div>
   );
 }
 
