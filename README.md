@@ -17,5 +17,6 @@ Softuni React Course Personal Project
 ## 3. Create Service Layer
 * Service layer architecture
 * Abstract requester
+* Add catalogue api
 ## 4. Page implementations
 * Catalogue

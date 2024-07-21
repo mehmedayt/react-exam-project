@@ -1,6 +1,16 @@
-export default function Catalogue(){
+import { useEffect, useState } from "react";
+import * as catalogueAPI from "../../api/catalogue-api";
 
+export default function Catalogue(){
+    const [catalogue, setCatalogue] = useState([]);
+
+    useEffect(() => {
+        catalogueAPI.getAll()
+            .then(result => setCatalogue(result))
+    }, []);
+    
     return (
+
         <section id="catalog-page">
         <h1>All Games</h1>
         {/* <!-- Display div: with information about every game (if any) --> */}
