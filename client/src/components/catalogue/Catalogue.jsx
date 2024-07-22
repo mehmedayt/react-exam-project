@@ -14,13 +14,12 @@ export default function Catalogue() {
   return (
     <section id="catalog-page">
       <h1>All Games</h1>
-      {/* <!-- Display div: with information about every game (if any) --> */}
 
-        {catalogue.map(item => <CatalogueListItem key={item._id} {...item} />)}
-      
-      
-      {/* <!-- Display paragraph: If there is no games  --> */}
-      <h3 className="no-articles">No articles yet</h3>
+        {catalogue.length > 0
+        ? catalogue.map(item => <CatalogueListItem key={item._id} {...item} />) 
+        : <h3 className="no-articles">No articles yet</h3>
+    }
+    
     </section>
   );
 }
