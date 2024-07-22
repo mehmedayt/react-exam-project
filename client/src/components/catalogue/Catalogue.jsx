@@ -1,46 +1,26 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import * as catalogueAPI from "../../api/catalogue-api";
+import CatalogueListItem from "./catalogue-list-item/CatalogueListItem";
 
-export default function Catalogue(){
-    const [catalogue, setCatalogue] = useState([]);
+export default function Catalogue() {
+  const [catalogue, setCatalogue] = useState([]);
 
-    useEffect(() => {
-        catalogueAPI.getAll()
-            .then(result => setCatalogue(result))
-    }, []);
-    
-    return (
+  useEffect(() => {
+    catalogueAPI.getAll().then((result) => setCatalogue(result));
+  }, []);
 
-        <section id="catalog-page">
-        <h1>All Games</h1>
-        {/* <!-- Display div: with information about every game (if any) --> */}
-        <div className="allGames">
-          <div className="allGames-info">
-            <img src="./images/avatar-1.jpg" />
-            <h6>Action</h6>
-            <h2>Cover Fire</h2>
-            <a href="#" className="details-button">Details</a>
-          </div>
-        </div>
-        <div className="allGames">
-          <div className="allGames-info">
-            <img src="./images/avatar-1.jpg" />
-            <h6>Action</h6>
-            <h2>Zombie lang</h2>
-            <a href="#" className="details-button">Details</a>
-          </div>
-        </div>
-        <div className="allGames">
-          <div className="allGames-info">
-            <img src="./images/avatar-1.jpg" />
-            <h6>Action</h6>
-            <h2>MineCraft</h2>
-            <a href="#" className="details-button">Details</a>
-          </div>
-        </div>
-    
-        {/* <!-- Display paragraph: If there is no games  --> */}
-        <h3 className="no-articles">No articles yet</h3>
-      </section>
-    );
+  return (
+    <section id="catalog-page">
+      <h1>All Games</h1>
+      {/* <!-- Display div: with information about every game (if any) --> */}
+
+        {catalogue.map(item => <CatalogueListItem key={item._id} {...item} />)}
+      
+      
+      {/* <!-- Display paragraph: If there is no games  --> */}
+      <h3 className="no-articles">No articles yet</h3>
+    </section>
+  );
 }

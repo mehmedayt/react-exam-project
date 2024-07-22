@@ -20,3 +20,5 @@ Softuni React Course Personal Project
 * Add catalogue api
 ## 4. Page implementations
 * Catalogue
+* Home
+* Details
