@@ -1,5 +1,20 @@
+/* eslint-disable react/jsx-key */
+import { useEffect, useState } from "react";
+import catalogueAPI from "../../api/catalogue-api";
+import LatestItems from "./latestItems/LatestItems";
+
 /* eslint-disable react/no-unknown-property */
 export default function Home() {
+    const [latestItems, setLatestItems] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const result = await catalogueAPI.getAll();
+            //TODO: modyfy to fetch only latest
+            setLatestItems(result.reverse().slice(0, 3));
+        })();
+    });
+
   return (
     <section id="welcome-world">
       <div className="welcome-message">
@@ -11,62 +26,11 @@ export default function Home() {
       <div id="home-page">
         <h1>Latest Games</h1>
 
-        <div className="game">
-          <div className="image-wrap">
-            <img src="./images/CoverFire.png" />
-          </div>
-          <h3>Cover Fire</h3>
-          <div className="rating">
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-          </div>
-          <div className="data-buttons">
-            <a href="#" className="btn details-btn">
-              Details
-            </a>
-          </div>
-        </div>
-        <div className="game">
-          <div className="image-wrap">
-            <img src="./images/ZombieLang.png" />
-          </div>
-          <h3>Zombie Lang</h3>
-          <div className="rating">
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-          </div>
-          <div className="data-buttons">
-            <a href="#" className="btn details-btn">
-              Details
-            </a>
-          </div>
-        </div>
-        <div className="game">
-          <div className="image-wrap">
-            <img src="./images/MineCraft.png" />
-          </div>
-          <h3>MineCraft</h3>
-          <div className="rating">
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-          </div>
-          <div className="data-buttons">
-            <a href="#" className="btn details-btn">
-              Details
-            </a>
-          </div>
-        </div>
-
-        <p className="no-articles">No games yet</p>
+        {latestItems.length > 0 
+        ? latestItems.map(item => <LatestItems key={item._id} {...item} />)
+        : <p className="no-articles">No games yet</p>
+        }
+        
       </div>
     </section>
   );
