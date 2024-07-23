@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Header(){
     return(
         <header>
-        <h1><Link className="home" to="#">React Project</Link></h1>
+        <h1><Link className="home" to="/">React Project</Link></h1>
         <nav>
           <Link to="/catalogue">All games</Link>
           <div id="user">

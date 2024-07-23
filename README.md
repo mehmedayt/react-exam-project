@@ -26,3 +26,9 @@ Softuni React Course Personal Project
     * Api function - getOne
     * Comments
 * Home - Latest items
+## 5. Comments
+* Create service for nested resource comments
+* Post comments to server
+* Read comments from server
+* Add comments in the component
+* Clear form

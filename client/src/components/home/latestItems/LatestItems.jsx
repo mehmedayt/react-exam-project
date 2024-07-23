@@ -20,7 +20,7 @@ export default function LatestItems({
             <span>☆</span>
           </div>
           <div className="data-buttons">
-            <Link to={`/games/${_id}/details`} className="btn details-btn">
+            <Link to={`/items/${_id}/details`} className="btn details-btn">
               Details
             </Link>
           </div>
