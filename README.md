@@ -48,3 +48,4 @@ Softuni React Course Personal Project
 * Create item
     * API function
     * Hook
+    * Latest games
