@@ -15,7 +15,9 @@ const getAll = async  (itemId) =>{
     return comments;
 };
 
-export default {
+const commentsAPI = {
     create,
-    getAll,
+    getAll
 };
+
+export default commentsAPI;

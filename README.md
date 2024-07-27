@@ -38,6 +38,7 @@ Softuni React Course Personal Project
 * Comment hooks
 ## 7. Authentication
 * Auth API
+    * Login
 * Auth API hook
 * Auth state & context
 * Login

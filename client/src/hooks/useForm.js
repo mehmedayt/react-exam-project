@@ -4,7 +4,7 @@ import { useState } from "react";
     const [values, setValues] = useState(initialValues);
 
     //Add support for checkbox
-    const changeHandler = (e) => {
+    const changeHandler = (e) => { 
       setValues(state => ({
         ...state,
         [e.target.name]: e.target.value
