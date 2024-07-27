@@ -50,7 +50,7 @@ export default function Details(){
           </div>
     
           <p className="text">
-           {item.description}
+           {item.summary}
           </p>
     
           {/* <!-- Bonus ( for Guests and Users ) --> */}

@@ -32,3 +32,19 @@ Softuni React Course Personal Project
 * Read comments from server
 * Add comments in the component
 * Clear form
+## 6. API Hooks
+* Form hook
+* ItemAPI hooks
+* Comment hooks
+## 7. Authentication
+* Auth API
+* Auth API hook
+* Auth state & context
+* Login
+* Register
+* Logout
+## 8. UI Implementation
+* Dynamic navigation
+* Create item
+    * API function
+    * Hook
