@@ -1,24 +1,16 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
-import catalogueAPI from "../../api/catalogue-api";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import commentsApi from "../../api/comments-api";
+import { useGetOneItems } from "../../hooks/useItems";
 
 export default function Details(){
+  
+  const { itemId } = useParams();
+  const [username, setUsername] = useState('');
+  const [comment, setComment] = useState('');
+  const [item, setItem] = useGetOneItems(itemId);
 
-    const [item, setItem] = useState({});
-    const [username, setUsername] = useState('');
-    const [comment, setComment] = useState('');
-    const { itemId } = useParams();
-
-    useEffect(() => {
-        (async () => {
-            const result = await catalogueAPI.getOne(itemId);
-            
-            setItem(result);
-        })(); 
-
-    }, []);
 
     const commentSubmitHandler = async (e) => {
         e.preventDefault();

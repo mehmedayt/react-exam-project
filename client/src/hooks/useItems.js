@@ -18,3 +18,21 @@ export function useGetAllItems(){
 
   return [items, setItems];
 }
+
+export function useGetOneItems(itemId){
+    const [item, setItem] = useState({});
+
+    useEffect(() => {
+        (async () => {
+            const result = await catalogueAPI.getOne(itemId);
+            
+            setItem(result);
+        })(); 
+
+    }, [itemId]);
+
+    return [
+        item,
+        setItem,
+    ];
+}
