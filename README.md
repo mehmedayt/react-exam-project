@@ -53,3 +53,5 @@ Softuni React Course Personal Project
     * API function
     * Hook
     * Latest games
+## 9. Refactoring
+* Extract auth state from App component

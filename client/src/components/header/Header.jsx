@@ -1,11 +1,10 @@
 /* eslint-disable react/no-unknown-property */
 
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 
 export default function Header(){
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useAuthContext();
     return(
         <header>
         <h1><Link className="home" to="/">React Project</Link></h1>
