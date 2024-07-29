@@ -1,6 +1,6 @@
 import * as request from "./requester";
 
-const BASE_URL = 'http://localhost:3030/jsonstore/items';
+const BASE_URL = 'http://localhost:3030/data/items';
 
 export const getAll = async () => {
     const result = await request.get(BASE_URL);
@@ -12,9 +12,12 @@ export const getAll = async () => {
 
 export const getOne = (itemId) => request.get(`${BASE_URL}/${itemId}`);
 
+export const create = (itemData) => request.post(`${BASE_URL}`, itemData);
+
 const catalogueAPI = {
     getAll,
     getOne,
+    create,
 };
 
 export default catalogueAPI;

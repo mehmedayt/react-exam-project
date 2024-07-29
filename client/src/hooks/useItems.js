@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useEffect, useState } from "react";
 
 import catalogueAPI from "../api/catalogue-api";
@@ -35,4 +36,10 @@ export function useGetOneItems(itemId){
         item,
         setItem,
     ];
+}
+
+export function useCreateItem(){
+    const itemCreateHandler = (itemData) => catalogueAPI.create(itemData);
+
+    return itemCreateHandler;
 }
