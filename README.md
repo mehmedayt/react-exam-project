@@ -55,3 +55,4 @@ Softuni React Course Personal Project
     * Latest games
 ## 9. Refactoring
 * Extract auth state from App component
+* Persist auth state
