@@ -20,7 +20,7 @@ export default function Create(){
       navigate(`/items/${itemId}/details`);
 
     } catch (err) {
-      //TODO: set error message and display error
+      //TODO: set error message and display error 
       console.log(err.message);
     }
   };
