@@ -8,7 +8,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import { useGetAllComments, useCreateComment } from "../../hooks/useComments";
 
 const initialValues = {
-  comment: "",
+  comment: '',
 };
 
 export default function Details() {
@@ -17,10 +17,17 @@ export default function Details() {
   const createComment = useCreateComment();
   const [item] = useGetOneItems(itemId);
   const { isAuthenticated } = useAuthContext();
-  const { changeHandler, submitHandler, values } = useForm(
-    initialValues,
-    ({ comment }) => {
-      createComment(itemId, comment);
+
+  const { changeHandler, submitHandler, values 
+  } = useForm( initialValues, async ({ comment }) => {
+    try {
+      const newComment = await createComment(itemId, comment);
+      
+      setComments(oldComments => [...oldComments, newComment]);
+    } catch (err) {
+      console.log(err.message);
+    }
+
     }
   );
 
