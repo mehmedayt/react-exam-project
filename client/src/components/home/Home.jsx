@@ -13,7 +13,7 @@ export default function Home() {
             //TODO: modyfy to fetch only latest
             setLatestItems(result.reverse().slice(0, 3));
         })();
-    });
+    }, []);
 
   return (
     <section id="welcome-world">
