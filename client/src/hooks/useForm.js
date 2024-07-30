@@ -15,6 +15,8 @@ import { useState } from "react";
         e.preventDefault();
 
         submitCallback(values);
+        
+        setValues(initialValues);
     }; 
 
     return {
