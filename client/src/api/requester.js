@@ -24,6 +24,11 @@ async function requester(method, url, data){
     }
     
     const responce = await fetch(url, options);
+
+    if(responce.status === 204){
+        return;
+    }
+
     const result = await responce.json();
 
     if(!responce.ok){

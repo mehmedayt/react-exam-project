@@ -9,8 +9,9 @@ import Register from './components/register/Register';
 import Catalogue from './components/catalogue/Catalogue';
 import Create from './components/create/Create';
 import Details from './components/details/Details';
-import { AuthContextProvider } from './context/AuthContext';
+import Logout from './components/logout/Logout';
 
+import { AuthContextProvider } from './context/AuthContext';
 /* eslint-disable no-unused-vars */
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
+          <Route path='/logout' element={<Logout/>} />
           <Route path='/catalogue' element={<Catalogue/>} />
           <Route path='/items/:itemId/details' element={<Details/>} />
           <Route path='/create' element={<Create/>} />
