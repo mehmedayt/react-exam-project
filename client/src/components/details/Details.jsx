@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import commentsApi from "../../api/comments-api";
 import { useGetOneItems } from "../../hooks/useItems";
 import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../context/AuthContext";
@@ -13,8 +12,9 @@ const initialValues = {
 
 export default function Details() {
   const { itemId } = useParams();
-  const [ comments, setComments ] = useGetAllComments(itemId);
+  const [ comments, dispatch ] = useGetAllComments(itemId);
   const createComment = useCreateComment();
+  const { email } = useAuthContext();
   const [item] = useGetOneItems(itemId);
   const { isAuthenticated } = useAuthContext();
 
@@ -23,7 +23,8 @@ export default function Details() {
     try {
       const newComment = await createComment(itemId, comment);
       
-      setComments(oldComments => [...oldComments, newComment]);
+      // setComments(oldComments => [...oldComments, newComment]);
+      dispatch({type: 'ADD_COMMENT', payload: {...newComment, author: {email}}});
     } catch (err) {
       console.log(err.message);
     }
