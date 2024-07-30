@@ -7,30 +7,35 @@ import { useAuthContext } from "../../context/AuthContext";
 import { useGetAllComments, useCreateComment } from "../../hooks/useComments";
 
 const initialValues = {
-  comment: '',
+  comment: "",
 };
 
 export default function Details() {
   const { itemId } = useParams();
-  const [ comments, dispatch ] = useGetAllComments(itemId);
+  const [comments, dispatch] = useGetAllComments(itemId);
   const createComment = useCreateComment();
-  const { email } = useAuthContext();
+  const { email, userId } = useAuthContext();
   const [item] = useGetOneItems(itemId);
   const { isAuthenticated } = useAuthContext();
 
-  const { changeHandler, submitHandler, values 
-  } = useForm( initialValues, async ({ comment }) => {
-    try {
-      const newComment = await createComment(itemId, comment);
-      
-      // setComments(oldComments => [...oldComments, newComment]);
-      dispatch({type: 'ADD_COMMENT', payload: {...newComment, author: {email}}});
-    } catch (err) {
-      console.log(err.message);
-    }
+  const { changeHandler, submitHandler, values } = useForm(
+    initialValues,
+    async ({ comment }) => {
+      try {
+        const newComment = await createComment(itemId, comment);
 
+        // setComments(oldComments => [...oldComments, newComment]);
+        dispatch({
+          type: "ADD_COMMENT",
+          payload: { ...newComment, author: { email } },
+        });
+      } catch (err) {
+        console.log(err.message);
+      }
     }
   );
+
+  const isOwner = userId === item._ownerId;
 
   return (
     <section id="game-details">
@@ -53,21 +58,28 @@ export default function Details() {
           {/* <!-- Display paragraph: If there are no games in the database --> */}
 
           <ul>
-            {comments.map(comment => (
-                    <li key={comment._id} className="comment">
-                      <p>{comment.author.email}: {comment.text}</p>
-                    </li>
-                  )) 
-                }
+            {comments.map((comment) => (
+              <li key={comment._id} className="comment">
+                <p>
+                  {comment.author.email}: {comment.text}
+                </p>
+              </li>
+            ))}
           </ul>
-                {comments.length == 0 && <p className="no-comment">No comments.</p>}
+          {comments.length == 0 && <p className="no-comment">No comments.</p>}
         </div>
 
         {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
-        {/* <div className="buttons">
-            <a href="#" className="button">Edit</a>
-            <a href="#" className="button">Delete</a>
-          </div> */}
+        {isOwner && (
+          <div className="buttons">
+            <a href="#" className="button">
+              Edit
+            </a>
+            <a href="#" className="button">
+              Delete
+            </a>
+          </div>
+        )}
       </div>
 
       {/* <!-- Bonus --> */}
