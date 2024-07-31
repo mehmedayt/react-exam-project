@@ -18,13 +18,13 @@ export default function Home() {
   return (
     <section id="welcome-world">
       <div className="welcome-message">
-        <h2>ALL new games are</h2>
-        <h3>Only in GamesPlay</h3>
+        <h2>DREAM CARS</h2>
+        <h3>Search your dream car</h3>
       </div>
-      <img src="./images/four_slider_img01.png" alt="hero" />
 
+        <h1  className="new-arrival">New Arrival</h1>
+        <h1  className="our-explore">Our explore Cars</h1>
       <div id="home-page">
-        <h1>Latest Games</h1>
 
         {latestItems.length > 0 
         ? latestItems.map(item => <LatestItems key={item._id} {...item} />)

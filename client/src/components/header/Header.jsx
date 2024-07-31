@@ -7,7 +7,10 @@ export default function Header(){
   const { isAuthenticated } = useAuthContext();
     return(
         <header>
-        <h1><Link className="home" to="/">React Project</Link></h1>
+
+      <Link to="/">
+        <img src='../images/dream-cars-logo.webp' alt="logo" className="logo" />
+      </Link>
         <nav>
           <Link to="/catalogue">All games</Link>
           {isAuthenticated 
