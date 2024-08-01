@@ -3,12 +3,12 @@ import { useLogin } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
 
 /* eslint-disable react/no-unescaped-entities */
+const initialValues = {email: '', password: ''};
 export default function Login(){
   
   const login = useLogin();
   const navigate = useNavigate();
 
-  const initialValues = {email: '', password: ''};
   
   const loginHandler = async ({email, password}) => {
     try {

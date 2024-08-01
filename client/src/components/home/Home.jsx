@@ -11,9 +11,9 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const result = await catalogueAPI.getAll();
-      //TODO: modyfy to fetch only latest
-      setLatestItems(result.reverse().slice(0, 3));
+      const result = await catalogueAPI.getLatest();
+
+      setLatestItems(result);
     })();
   }, []);
 
@@ -33,7 +33,7 @@ export default function Home() {
         {latestItems.length > 0 ? (
           latestItems.map((item) => <LatestItems key={item._id} {...item} />)
         ) : (
-          <p className="no-articles">No games yet</p>
+          <p className="no-articles">No cars yet</p>
         )}
       </div>
     </section>

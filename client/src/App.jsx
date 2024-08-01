@@ -13,6 +13,7 @@ import Logout from './components/logout/Logout';
 
 import { AuthContextProvider } from './context/AuthContext';
 import CarEdit from './components/car-edit/CarEdit';
+import PrivateGuard from './components/common/PrivateGuard';
 /* eslint-disable no-unused-vars */
 function App() {
 
@@ -29,8 +30,11 @@ function App() {
           <Route path='/logout' element={<Logout/>} />
           <Route path='/catalogue' element={<Catalogue/>} />
           <Route path='/items/:itemId/details' element={<CarDetails/>} />
-          <Route path='/items/:itemId/edit' element={<CarEdit/>} />
-          <Route path='/create' element={<CarCreate/>} />
+          <Route element={<PrivateGuard/>} >
+            <Route path='/create' element={<CarCreate/>} />
+            <Route path='/items/:itemId/edit' element={<CarEdit/>} />
+          </Route>
+
         </Routes>
 
       </main>

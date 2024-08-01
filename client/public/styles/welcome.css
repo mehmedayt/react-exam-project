@@ -187,8 +187,9 @@ color: #243b67;
 }
 
 .no-articles {
-  color: white;
+  color: #0091a6;
   text-align: center;
+  margin-left: 43%;
   font-weight: 700;
   font-size: 60px;
   font-family: "Agency FB";

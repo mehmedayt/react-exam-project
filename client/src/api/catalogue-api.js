@@ -10,6 +10,19 @@ export const getAll = async () => {
     return items;
 };
 
+export const getLatest = async () => {
+    const urlSearchParams = new URLSearchParams({
+        sortBy: '_createdOn desc',
+        pageSize: 3,
+    });
+
+    const result = await request.get(`${BASE_URL}?${urlSearchParams.toString()}`);
+
+    const latestGames = Object.values(result);
+
+    return latestGames;
+};
+
 export const getOne = (itemId) => request.get(`${BASE_URL}/${itemId}`);
 
 export const create = (itemData) => request.post(`${BASE_URL}`, itemData);
@@ -23,7 +36,8 @@ const catalogueAPI = {
     getOne,
     create,
     remove,
-    update
+    update,
+    getLatest
 };
 
 export default catalogueAPI;
