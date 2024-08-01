@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetOneItems } from "../../hooks/useItems";
 import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../context/AuthContext";
@@ -11,7 +11,7 @@ const initialValues = {
   comment: "",
 };
 
-export default function Details() {
+export default function CarDetails() {
   const navigate = useNavigate();
   const { itemId } = useParams();
   const [comments, dispatch] = useGetAllComments(itemId);
@@ -38,6 +38,13 @@ export default function Details() {
   );
 
   const itemDeleteHandler = async () => {
+
+    const isConfirmed = confirm(`Are you sure you want to delete your ${item.title} ad?`);
+
+    if(!isConfirmed){
+      return;
+    }
+
     try {
       await catalogueAPI.remove(itemId);
 
@@ -51,7 +58,7 @@ export default function Details() {
 
   return (
     <section id="game-details">
-      <h1>Game Details</h1>
+      <h1>Car Details</h1>
       <div className="info-section">
         <div className="game-header">
           <img className="game-img" src={item.imageUrl} />
@@ -84,9 +91,9 @@ export default function Details() {
         {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
         {isOwner && (
           <div className="buttons">
-            <a href="#" className="button">
+            <Link to={`/items/${itemId}/edit`} className="button">
               Edit
-            </a>
+            </Link>
             <a href="#" onClick={itemDeleteHandler} className="button">
               Delete
             </a>

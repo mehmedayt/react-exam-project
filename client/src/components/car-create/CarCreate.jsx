@@ -10,7 +10,7 @@ const initialValues = {
   summary: '',
 };
 
-export default function Create(){
+export default function CarCreate(){
   const navigate = useNavigate();
    const createItem = useCreateItem();
 
@@ -35,7 +35,7 @@ export default function Create(){
         <section id="create-page" className="auth">
         <form id="create" onSubmit={submitHandler}>
           <div className="container">
-            <h1>Create Game</h1>
+            <h1>Create AD</h1>
             <label htmlFor="leg-title">Legendary title:</label>
             <input
               type="text"

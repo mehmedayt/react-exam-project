@@ -16,11 +16,14 @@ export const create = (itemData) => request.post(`${BASE_URL}`, itemData);
 
 export const remove = (itemId) => request.del(`${BASE_URL}/${itemId}`);
 
+export const update = (itemId, itemData) => request.put(`${BASE_URL}/${itemId}`, itemData);
+
 const catalogueAPI = {
     getAll,
     getOne,
     create,
-    remove
+    remove,
+    update
 };
 
 export default catalogueAPI;

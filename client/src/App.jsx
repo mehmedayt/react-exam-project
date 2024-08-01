@@ -7,11 +7,12 @@ import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Catalogue from './components/catalogue/Catalogue';
-import Create from './components/create/Create';
-import Details from './components/details/Details';
+import CarCreate from './components/car-create/CarCreate';
+import CarDetails from './components/car-details/CarDetails';
 import Logout from './components/logout/Logout';
 
 import { AuthContextProvider } from './context/AuthContext';
+import CarEdit from './components/car-edit/CarEdit';
 /* eslint-disable no-unused-vars */
 function App() {
 
@@ -27,8 +28,9 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/logout' element={<Logout/>} />
           <Route path='/catalogue' element={<Catalogue/>} />
-          <Route path='/items/:itemId/details' element={<Details/>} />
-          <Route path='/create' element={<Create/>} />
+          <Route path='/items/:itemId/details' element={<CarDetails/>} />
+          <Route path='/items/:itemId/edit' element={<CarEdit/>} />
+          <Route path='/create' element={<CarCreate/>} />
         </Routes>
 
       </main>

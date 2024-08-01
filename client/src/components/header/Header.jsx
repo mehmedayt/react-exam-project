@@ -12,10 +12,10 @@ export default function Header(){
         <img src='../images/dream-cars-logo.webp' alt="logo" className="logo" />
       </Link>
         <nav>
-          <Link to="/catalogue">All games</Link>
+          <Link to="/catalogue">Cars For Sale</Link>
           {isAuthenticated 
           ?<div id="user">
-            <Link to="/create">Create Game</Link>
+            <Link to="/create">Sell My Car</Link>
             <Link to="/logout">Logout</Link>
           </div>
           :<div id="guest">

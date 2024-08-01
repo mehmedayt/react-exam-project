@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-export default function CatalogueListItem ({
+export default function CarListItem ({
     _id,    
     title,
     category,

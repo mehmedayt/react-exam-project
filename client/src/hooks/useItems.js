@@ -5,7 +5,13 @@ import catalogueAPI from "../api/catalogue-api";
 
 
 export function useGetAllItems(){
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState({
+        title: '',
+        category: '',
+        maxLevel: '',
+        imageUrl: '',
+        summary: '',
+      });
 
     useEffect(() => {
   

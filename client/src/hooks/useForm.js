@@ -1,27 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
- export function useForm(initialValues, submitCallback){
-    const [values, setValues] = useState(initialValues);
+export function useForm(initialValues, submitCallback) {
+  const [values, setValues] = useState(initialValues);
 
-    //Add support for checkbox
-    const changeHandler = (e) => { 
-      setValues(state => ({
-        ...state,
-        [e.target.name]: e.target.value
-      }));  
-    };
+  useEffect(() => {
+    setValues(initialValues);
+  }, [initialValues]);
 
-    const submitHandler = (e) => {
-        e.preventDefault();
+  //Add support for checkbox
+  const changeHandler = (e) => {
+    setValues((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-        submitCallback(values);
-        
-        setValues(initialValues);
-    }; 
+  const submitHandler = async (e) => {
+    e.preventDefault();
 
-    return {
-        values,
-        changeHandler,
-        submitHandler
-    };
+    await submitCallback(values);
+
+    setValues(initialValues);
+  };
+
+  return {
+    values,
+    changeHandler,
+    submitHandler,
+  };
 }
