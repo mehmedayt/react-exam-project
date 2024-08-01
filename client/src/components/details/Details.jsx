@@ -1,16 +1,18 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useGetOneItems } from "../../hooks/useItems";
 import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../context/AuthContext";
 import { useGetAllComments, useCreateComment } from "../../hooks/useComments";
+import catalogueAPI from "../../api/catalogue-api";
 
 const initialValues = {
   comment: "",
 };
 
 export default function Details() {
+  const navigate = useNavigate();
   const { itemId } = useParams();
   const [comments, dispatch] = useGetAllComments(itemId);
   const createComment = useCreateComment();
@@ -34,6 +36,16 @@ export default function Details() {
       }
     }
   );
+
+  const itemDeleteHandler = async () => {
+    try {
+      await catalogueAPI.remove(itemId);
+
+      navigate('/');
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
   const isOwner = userId === item._ownerId;
 
@@ -75,7 +87,7 @@ export default function Details() {
             <a href="#" className="button">
               Edit
             </a>
-            <a href="#" className="button">
+            <a href="#" onClick={itemDeleteHandler} className="button">
               Delete
             </a>
           </div>

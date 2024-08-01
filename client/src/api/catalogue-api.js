@@ -14,10 +14,13 @@ export const getOne = (itemId) => request.get(`${BASE_URL}/${itemId}`);
 
 export const create = (itemData) => request.post(`${BASE_URL}`, itemData);
 
+export const remove = (itemId) => request.del(`${BASE_URL}/${itemId}`);
+
 const catalogueAPI = {
     getAll,
     getOne,
     create,
+    remove
 };
 
 export default catalogueAPI;

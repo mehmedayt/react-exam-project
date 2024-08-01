@@ -22,7 +22,7 @@ export default function Home() {
       <div className="welcome-message">
         <h2>DREAM CARS</h2>
         <h3>Search your dream car</h3>
-        <Link to="#" className="search-btn">
+        <Link to="/catalogue" className="search-btn">
           Search now...
         </Link>
       </div>
