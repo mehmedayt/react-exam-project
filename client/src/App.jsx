@@ -17,6 +17,7 @@ import PrivateGuard from './components/common/PrivateGuard';
 import Footer from './components/footer/Footer';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
+import Terms from './components/terms/Terms';
 /* eslint-disable no-unused-vars */
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
           </Route>
           <Route path='/about' element={<About/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/terms-and-condition' element={<Terms/>} />
 
         </Routes>
 
