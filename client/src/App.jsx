@@ -14,6 +14,7 @@ import Logout from './components/logout/Logout';
 import { AuthContextProvider } from './context/AuthContext';
 import CarEdit from './components/car-edit/CarEdit';
 import PrivateGuard from './components/common/PrivateGuard';
+import Footer from './components/footer/Footer';
 /* eslint-disable no-unused-vars */
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
 
       </main>
     </div>
+    <Footer/>
     </AuthContextProvider>
   );
 }

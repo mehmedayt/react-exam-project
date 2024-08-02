@@ -29,7 +29,7 @@ export default function CustomMap(){
   };
 
   return (
-    <div style={{ height: '50vh', width: '2000px', 'margin-top': '50px' }}>
+    <div style={{ height: '50vh', width: '1800px', marginTop: '50px' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyB_atPx7epBiewkaHyP-fg3N9TWTGNoREk" }}
         defaultCenter={defaultProps.center}

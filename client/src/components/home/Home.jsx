@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       const result = await catalogueAPI.getAll();
-      setLatestItems(result.reverse().slice(0, 3));
+      setLatestItems(result.reverse().slice(0, 4));
     })();
   }, []);
 
@@ -26,7 +26,7 @@ export default function Home() {
           Search now...
         </Link>
       </div>
-
+      <div className="devider"></div>
       <h1 className="new-arrival">New Arrival</h1>
       <h1 className="our-explore">Our explore Cars</h1>
       <div id="home-page">
