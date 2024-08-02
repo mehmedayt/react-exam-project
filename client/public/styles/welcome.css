@@ -213,6 +213,21 @@ color: #243b67;
   width: 50%; 
 }
 
+.flex{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  color: white;
+}
+
+.lorem{
+  background-color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  color: black;
+  text-decoration: solid;
+  margin: 5% 40%;
+  font-size: 1.5em;
+}
 
 .footer-content-about {
   display: flex;
