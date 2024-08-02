@@ -1342,9 +1342,9 @@
         items: {
             "0c3c7223-48f2-4715-868a-fb07f727e8be": {
                 "_ownerId": "d069238f-5076-49d3-a27c-30c8954e4633",
-                "title": "BMW",
-                "category": "535i",
-                "maxLevel": "303",
+                "brand": "BMW",
+                "model": "535i",
+                "engineCapacity": "303",
                 "imageUrl": "https://mobistatic1.focus.bg/mobile/photosorg/633/1/big1/11677534522430633_lQ.jpg",
                 "summary": "twin power turbo 3L engine",
                 "_createdOn": 1722376015461,
@@ -1352,9 +1352,9 @@
             },
             "1c3c7223-48f2-5162-868a-fb07f727e8be": {
                 "_ownerId": "d069238f-5076-49d3-a27c-30c8954e4633",
-                "title": "Audi",
-                "category": "A7",
-                "maxLevel": "320",
+                "brand": "Audi",
+                "model": "A7",
+                "engineCapacity": "320",
                 "imageUrl": "https://mobistatic1.focus.bg/mobile/photosorg/137/1/big1/11713888480372137_Ef.jpg",
                 "summary": "twin power turbo V6 engine",
                 "_createdOn": 1722376015452,
@@ -1362,9 +1362,9 @@
             },
             "2c3c7223-2f52-5162-868a-fb07f727e8be": {
                 "_ownerId": "d069238f-5076-49d3-a27c-30c8954e4633",
-                "title": "Ford",
-                "category": "Ranger",
-                "maxLevel": "250",
+                "brand": "Ford",
+                "model": "Ranger",
+                "engineCapacity": "250",
                 "imageUrl": "https://mobistatic4.focus.bg/mobile/photosorg/526/2/big1/21662475800475526_MN.jpg",
                 "summary": "3.6 litre engine",
                 "_createdOn": 1722376015452,

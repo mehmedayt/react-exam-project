@@ -6,9 +6,9 @@ import catalogueAPI from "../api/catalogue-api";
 
 export function useGetAllItems(){
     const [items, setItems] = useState({
-        title: '',
-        category: '',
-        maxLevel: '',
+        brand: '',
+        model: '',
+        engineCapacity: '',
         imageUrl: '',
         summary: '',
       });

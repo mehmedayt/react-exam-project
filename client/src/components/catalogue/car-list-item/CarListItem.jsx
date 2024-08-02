@@ -4,18 +4,22 @@ import { Link } from "react-router-dom";
 
 export default function CarListItem ({
     _id,    
-    title,
-    category,
+    brand,
+    model,
     imageUrl,
 }) {
     return(
-        <div className="allGames">
-        <div className="allGames-info">
+        <div className="allItems">
+        <div className="allItems-info">
           <img src={imageUrl} />
-          <h6>{category}</h6>
-          <h2>{title}</h2>
+          <img src="../../public/images/vip.webp" className="vip"/>
+          <h6>Car model: {model}</h6>
+          <h2>Car brand: {brand}</h2>
           <Link to={`/items/${_id}/details`} className="details-button">
             Details
+          </Link>
+          <Link to={`#`} className="ask-button">
+            Ask for availability
           </Link>
         </div>
       </div>

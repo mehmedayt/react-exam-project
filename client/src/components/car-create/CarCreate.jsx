@@ -3,9 +3,9 @@ import { useForm } from "../../hooks/useForm";
 import { useCreateItem } from "../../hooks/useItems";
 
 const initialValues = {
-  title: '',
-  category: '',
-  maxLevel: '',
+  brand: '',
+  model: '',
+  engineCapacity: '',
   imageUrl: '',
   summary: '',
 };
@@ -36,35 +36,35 @@ export default function CarCreate(){
         <form id="create" onSubmit={submitHandler}>
           <div className="container">
             <h1>Create AD</h1>
-            <label htmlFor="leg-title">Legendary title:</label>
+            <label htmlFor="leg-brand">Car brand:</label>
             <input
               type="text"
-              id="title"
-              name="title"
-              value={values.title}
+              id="brand"
+              name="brand"
+              value={values.brand}
               onChange={changeHandler}
-              placeholder="Enter game title..."
+              placeholder="Mercedes"
             />
     
-            <label htmlFor="category">Category:</label>
+            <label htmlFor="model">Model:</label>
             <input
               type="text"
-              id="category"
-              name="category"
-              value={values.category}
+              id="model"
+              name="model"
+              value={values.model}
               onChange={changeHandler}
-              placeholder="Enter game category..."
+              placeholder="S-class"
             />
     
-            <label htmlFor="levels">MaxLevel:</label>
+            <label htmlFor="levels">EngineCapacity:</label>
             <input
               type="number"
-              id="maxLevel"
-              name="maxLevel"
-              value={values.maxLevel}
+              id="engineCapacity"
+              name="engineCapacity"
+              value={values.engineCapacity}
               onChange={changeHandler}
               min="1"
-              placeholder="1"
+              placeholder="250"
             />
     
             <label htmlFor="game-img">Image:</label>
@@ -74,11 +74,11 @@ export default function CarCreate(){
               name="imageUrl"
               value={values.imageUrl}
               onChange={changeHandler}
-              placeholder="Upload a photo..."
+              placeholder="http://..."
             />
     
             <label htmlFor="summary">Summary:</label>
-            <textarea name="summary" id="summary" value={values.summary} onChange={changeHandler}></textarea>
+            <textarea name="summary" placeholder="It`s a..." id="summary" value={values.summary} onChange={changeHandler}></textarea>
             <input className="btn submit" type="submit" value="Create Game" />
           </div>
         </form>

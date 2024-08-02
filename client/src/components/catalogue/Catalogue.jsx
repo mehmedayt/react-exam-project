@@ -10,14 +10,15 @@ export default function Catalogue() {
   const [items] = useGetAllItems();
 
   return (
+    <div>
+      <h1 className="all-cars">All Cars</h1>
     <section id="catalog-page">
-      <h1>All Games</h1>
 
         {items.length > 0
         ? items.map(item => <CarListItem key={item._id} {...item} />) 
         : <h3 className="no-articles">No articles yet</h3>
     }
-    
     </section>
+    </div>
   );
 }

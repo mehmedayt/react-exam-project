@@ -39,7 +39,7 @@ export default function CarDetails() {
 
   const itemDeleteHandler = async () => {
 
-    const isConfirmed = confirm(`Are you sure you want to delete your ${item.title} ad?`);
+    const isConfirmed = confirm(`Are you sure you want to delete your ${item.brand} ad?`);
 
     if(!isConfirmed){
       return;
@@ -62,9 +62,9 @@ export default function CarDetails() {
       <div className="info-section">
         <div className="game-header">
           <img className="game-img" src={item.imageUrl} />
-          <h1>{item.title}</h1>
-          <span className="levels">MaxLevel: {item.maxLevel}</span>
-          <p className="type">{item.category}</p>
+          <h1>{item.brand}</h1>
+          <span className="levels">EngineCapacity: {item.engineCapacity}</span>
+          <p className="type">{item.model}</p>
         </div>
 
         <p className="text">{item.summary}</p>

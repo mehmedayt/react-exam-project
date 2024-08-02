@@ -25,31 +25,31 @@ export default function CarEdit() {
       <form id="edit" onSubmit={submitHandler}>
         <div className="container">
           <h1>Edit Game</h1>
-          <label htmlFor="leg-title">Legendary title:</label>
+          <label htmlFor="leg-brand">Legendary brand:</label>
           <input
             onChange={changeHandler}
-            value={values.title}
+            value={values.brand}
             type="text"
-            id="title"
-            name="title"
+            id="brand"
+            name="brand"
           />
 
-          <label htmlFor="category">Category:</label>
+          <label htmlFor="model">Model:</label>
           <input
             onChange={changeHandler}
-            value={values.category}
+            value={values.model}
             type="text"
-            id="category"
-            name="category"
+            id="model"
+            name="model"
           />
 
-          <label htmlFor="levels">MaxLevel:</label>
+          <label htmlFor="levels">EngineCapacity:</label>
           <input
             onChange={changeHandler}
-            value={values.maxLevel}
+            value={values.engineCapacity}
             type="number"
-            id="maxLevel"
-            name="maxLevel"
+            id="engineCapacity"
+            name="engineCapacity"
             min="1"
           />
 

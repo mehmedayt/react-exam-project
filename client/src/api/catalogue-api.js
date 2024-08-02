@@ -18,9 +18,9 @@ export const getLatest = async () => {
 
     const result = await request.get(`${BASE_URL}?${urlSearchParams.toString()}`);
 
-    const latestGames = Object.values(result);
+    const latestItems = Object.values(result);
 
-    return latestGames;
+    return latestItems;
 };
 
 export const getOne = (itemId) => request.get(`${BASE_URL}/${itemId}`);

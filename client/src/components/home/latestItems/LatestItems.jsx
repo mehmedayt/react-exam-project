@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function LatestItems({
     _id,
-    title,
+    brand,
     imageUrl,
 }){
     return (
@@ -11,7 +11,7 @@ export default function LatestItems({
           <div className="image-wrap">
             <img src={imageUrl} />
           </div>
-          <h3>{title}</h3>
+          <h3>{brand}</h3>
           <div className="rating">
             <span>☆</span>
             <span>☆</span>
