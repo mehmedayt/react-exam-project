@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import catalogueAPI from "../../api/catalogue-api";
 import LatestItems from "./latestItems/LatestItems";
+import CustomMap from "./custom-map/CustomMap";
 
 /* eslint-disable react/no-unknown-property */
 export default function Home() {
@@ -11,9 +12,8 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const result = await catalogueAPI.getLatest();
-
-      setLatestItems(result);
+      const result = await catalogueAPI.getAll();
+      setLatestItems(result.reverse().slice(0, 3));
     })();
   }, []);
 
@@ -35,6 +35,11 @@ export default function Home() {
         ) : (
           <p className="no-articles">No cars yet</p>
         )}
+      </div>
+
+      <div className="location">
+        <h1 className="our-location">Our Location</h1> 
+        <CustomMap/>
       </div>
     </section>
   );
