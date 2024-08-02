@@ -23,7 +23,7 @@ export default function CarEdit() {
   return (
     <section id="edit-page" className="auth">
       <form id="edit" onSubmit={submitHandler}>
-        <div className="container">
+        <div className="container edit-container">
           <h1>Edit Game</h1>
           <label htmlFor="leg-brand">Legendary brand:</label>
           <input

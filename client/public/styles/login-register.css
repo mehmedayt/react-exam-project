@@ -7,6 +7,13 @@
     box-sizing: border-box;
     background: #3e4443;
     box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    margin-bottom: 40vh;
+}
+
+.create-container,
+.edit-container{
+    padding-top: 0 !important;
+    padding-bottom: 10px !important;
 }
 
 #register-page {
@@ -17,6 +24,7 @@
     padding: 40px;
     box-sizing: border-box;
     background: #3e4443;
+    margin-bottom: 30vh;
     box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
 }
 
@@ -27,7 +35,8 @@
 .brand-logo {
     height: 100px;
     width: 100px;
-    background: url("../images/icon-gamepad-2.png");
+    background: url("../images/welcome.jpg") center center no-repeat;
+    background-size: cover;
     margin: auto;
     border-radius: 50%;
     box-sizing: border-box;

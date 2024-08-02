@@ -34,7 +34,7 @@ export default function CarCreate(){
     return(
         <section id="create-page" className="auth">
         <form id="create" onSubmit={submitHandler}>
-          <div className="container">
+          <div className="container create-container">
             <h1>Create AD</h1>
             <label htmlFor="leg-brand">Car brand:</label>
             <input
