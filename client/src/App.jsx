@@ -16,6 +16,7 @@ import CarEdit from './components/car-edit/CarEdit';
 import PrivateGuard from './components/common/PrivateGuard';
 import Footer from './components/footer/Footer';
 import About from './components/about/About';
+import Contact from './components/contact/Contact';
 /* eslint-disable no-unused-vars */
 function App() {
 
@@ -31,12 +32,13 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/logout' element={<Logout/>} />
           <Route path='/catalogue' element={<Catalogue/>} />
-          <Route path='/about' element={<About/>} />
           <Route path='/items/:itemId/details' element={<CarDetails/>} />
           <Route element={<PrivateGuard/>} >
             <Route path='/create' element={<CarCreate/>} />
             <Route path='/items/:itemId/edit' element={<CarEdit/>} />
           </Route>
+          <Route path='/about' element={<About/>} />
+          <Route path='/contact' element={<Contact/>} />
 
         </Routes>
 
