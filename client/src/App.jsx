@@ -10,6 +10,7 @@ import Catalogue from './components/catalogue/Catalogue';
 import CarCreate from './components/car-create/CarCreate';
 import CarDetails from './components/car-details/CarDetails';
 import Logout from './components/logout/Logout';
+import PopUp from './components/popUp/PopUp';
 
 import { AuthContextProvider } from './context/AuthContext';
 import CarEdit from './components/car-edit/CarEdit';
@@ -25,6 +26,7 @@ function App() {
     <AuthContextProvider>
     <div id="box">
       <Header />
+      <PopUp/>
 
       <main id="main-content">
         <Routes>
