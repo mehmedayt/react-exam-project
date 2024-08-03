@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function PopUp({isRequired}){
+export default function PopUp({isRequired, text}){
 
     return(
         <>
@@ -7,7 +7,7 @@ export default function PopUp({isRequired}){
         <div className="popUp">
             <img src="../public/images/popUp.jpg" alt="red-cross" className="red-cross"/>
             <h3>Sorry!</h3>
-            <p>All fields are required!</p>
+            <p>{text}</p>
         </div>)};
         </>
     );

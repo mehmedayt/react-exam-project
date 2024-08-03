@@ -12,6 +12,7 @@ export default function Login(){
   const navigate = useNavigate();
 
   const [showPopUp, setShowPopUp] = useState(false);
+  const [popMessage, setPopMassage] = useState('');
   
   const loginHandler = async ({email, password}) => {
     try {
@@ -22,7 +23,9 @@ export default function Login(){
       await login(email, password);
       navigate('/');
     } catch (err) {
-      console.log(err.message);
+      setPopMassage(err.message);
+      setShowPopUp(true);
+      // console.log(err.message);
     } 
   };
 
@@ -62,7 +65,7 @@ export default function Login(){
             </p>
           </div>
         </form>
-      {showPopUp && <PopUp isRequired={true}/>}
+      {showPopUp && <PopUp isRequired={true} text={popMessage.length > 1 ? popMessage : 'All fields are required!'}/>}
       </section>
     );
 }

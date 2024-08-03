@@ -1,22 +1,42 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useGetOneItems } from "../../hooks/useItems";
 import catalogueAPI from "../../api/catalogue-api";
-import { useMemo } from "react";
+import { useState } from "react";
+import PopUp from "../popUp/PopUp";
 
 export default function CarEdit() {
   const navigate = useNavigate();
   const { itemId } = useParams(); 
   const [ item ] = useGetOneItems(itemId);
 
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [popMessage, setPopMassage] = useState('');
+
   const { 
     changeHandler,
      submitHandler,
       values,
     } = useForm( item, async (values) => {
-        await catalogueAPI.update(itemId, values);
-        navigate(`/items/${itemId}/details`);
+      
+      if(values.brand === '' ||
+        values.model === '' ||
+        values.engineCapacity === '' || 
+        values.imageUrl === '' || 
+        values.summary === ''){
+          return setShowPopUp(true);
+        }
+
+        try {
+          await catalogueAPI.update(itemId, values);
+          navigate(`/items/${itemId}/details`);
+          
+        } catch (err) {
+          setPopMassage(err.message);
+          setShowPopUp(true);
+        }
 
     });
   
@@ -72,6 +92,7 @@ export default function CarEdit() {
           <input className="btn submit" type="submit" value="Edit Game" />
         </div>
       </form>
-    </section>
+      {showPopUp && <PopUp isRequired={true} text={popMessage.length > 1 ? popMessage : 'All fields are required!'}/>}
+      </section>
   );
 }

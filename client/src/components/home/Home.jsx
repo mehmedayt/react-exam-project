@@ -20,8 +20,11 @@ export default function Home() {
   return (
     <section id="welcome-world">
       <div className="welcome-message">
-        <h2>DREAM CARS</h2>
+        <h1 class="btn-shine" target="_blank">Dream cars</h1>
+        {/* <h2>DREAM CARS</h2> */}
         <h3>Search your dream car</h3>
+
+
         <Link to="/catalogue" className="search-btn">
           Search now...
         </Link>
@@ -38,8 +41,8 @@ export default function Home() {
       </div>
 
       <div className="location">
-        <h1 className="our-location">Our Location</h1> 
-        <CustomMap/>
+        <h1 className="our-location">Our Location</h1>
+        <CustomMap />
       </div>
     </section>
   );

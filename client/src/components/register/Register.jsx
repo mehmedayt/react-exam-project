@@ -12,25 +12,28 @@ const initialValues = { email: '', password: '', 'confirm-password': ''};
 export default function Register(){
   const [error, setError] = useState('');
   const [showPopUp, setShowPopUp] = useState(false);
+  const [popMessage, setPopMassage] = useState('');
 
   const register = useRegister();
   const navigate = useNavigate();
 
   const registerHandler = async (values) => {
     if(values.password !== values['confirm-password']){
-      setError('Password missmatch!');
+      setPopMassage('Password missmatch!');
+      setShowPopUp(true);
       return;
     }
 
     if(values.email ==='' || values.password === ''){
-      return setShowPopUp(true);
+      setShowPopUp(true);
     }
 
     try {
       await register(values.email, values.password);
       navigate('/');
     } catch (err) {
-      setError(err.message);
+      setShowPopUp(true);
+      setPopMassage(err.message);
     }
   };
 
@@ -88,7 +91,7 @@ export default function Register(){
             </p>
           </div>
         </form>
-      {showPopUp && <PopUp isRequired={true}/>}
+      {showPopUp && <PopUp isRequired={true} text={popMessage.length > 1 ? popMessage : 'All fields are required!'}/>}
 
       </section>
     );

@@ -16,6 +16,7 @@ export default function CarCreate(){
   const navigate = useNavigate();
    const createItem = useCreateItem();
   const [showPopUp, setShowPopUp] = useState(false);
+  const [popMessage, setPopMassage] = useState('');
 
 
   const createHandler = async (values) => {
@@ -32,8 +33,8 @@ export default function CarCreate(){
       navigate(`/items/${itemId}/details`);
 
     } catch (err) {
-      //TODO: set error message and display error 
-      console.log(err.message);
+      setPopMassage(err.message);
+      setShowPopUp(true);
     }
   };
 
@@ -94,7 +95,7 @@ export default function CarCreate(){
             <input className="btn submit" type="submit" value="Create Game" />
           </div>
         </form>
-        {showPopUp && <PopUp isRequired={true}/>}
+      {showPopUp && <PopUp isRequired={true} text={popMessage.length > 1 ? popMessage : 'All fields are required!'}/>}
       </section>
     );
 }

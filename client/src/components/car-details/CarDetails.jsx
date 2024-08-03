@@ -6,6 +6,7 @@ import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../context/AuthContext";
 import { useGetAllComments, useCreateComment } from "../../hooks/useComments";
 import catalogueAPI from "../../api/catalogue-api";
+import PopUp from "../popUp/PopUp";
 
 const initialValues = {
   comment: "",
@@ -19,11 +20,19 @@ export default function CarDetails() {
   const { email, userId } = useAuthContext();
   const [item] = useGetOneItems(itemId);
   const { isAuthenticated } = useAuthContext();
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [popMessage, setPopMassage] = useState("");
 
   const { changeHandler, submitHandler, values } = useForm(
     initialValues,
     async ({ comment }) => {
       try {
+        if (comment === "") {
+          setShowPopUp(true);
+          setPopMassage("You can`t make empty comment!");
+          return;
+        }
+        setShowPopUp(false);
         const newComment = await createComment(itemId, comment);
 
         // setComments(oldComments => [...oldComments, newComment]);
@@ -32,25 +41,28 @@ export default function CarDetails() {
           payload: { ...newComment, author: { email } },
         });
       } catch (err) {
-        console.log(err.message);
+        setPopMassage(err.message);
+        setShowPopUp(true);
       }
     }
   );
 
   const itemDeleteHandler = async () => {
+    const isConfirmed = confirm(
+      `Are you sure you want to delete your ${item.brand} ad?`
+    );
 
-    const isConfirmed = confirm(`Are you sure you want to delete your ${item.brand} ad?`);
-
-    if(!isConfirmed){
+    if (!isConfirmed) {
       return;
     }
 
     try {
       await catalogueAPI.remove(itemId);
 
-      navigate('/');
+      navigate("/");
     } catch (err) {
-      console.log(err.message);
+      setPopMassage(err.message);
+      setShowPopUp(true);
     }
   };
 
@@ -117,6 +129,14 @@ export default function CarDetails() {
 
             <input className="btn submit" type="submit" value="Add Comment" />
           </form>
+          {showPopUp && (
+            <PopUp
+              isRequired={true}
+              text={
+                popMessage.length > 1 ? popMessage : "All fields are required!"
+              }
+            />
+          )}
         </article>
       )}
     </section>
