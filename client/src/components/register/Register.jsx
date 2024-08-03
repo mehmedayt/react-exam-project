@@ -4,12 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRegister } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
 import { useState } from "react";
+import PopUp from "../popUp/PopUp";
 
 const initialValues = { email: '', password: '', 'confirm-password': ''};
 
 
 export default function Register(){
   const [error, setError] = useState('');
+  const [showPopUp, setShowPopUp] = useState(false);
+
   const register = useRegister();
   const navigate = useNavigate();
 
@@ -17,6 +20,10 @@ export default function Register(){
     if(values.password !== values['confirm-password']){
       setError('Password missmatch!');
       return;
+    }
+
+    if(values.email ==='' || values.password === ''){
+      return setShowPopUp(true);
     }
 
     try {
@@ -81,6 +88,8 @@ export default function Register(){
             </p>
           </div>
         </form>
+      {showPopUp && <PopUp isRequired={true}/>}
+
       </section>
     );
 }

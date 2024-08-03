@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useLogin } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
+import PopUp from "../popUp/PopUp";
+import { useState } from "react";
 
 /* eslint-disable react/no-unescaped-entities */
 const initialValues = {email: '', password: ''};
@@ -9,11 +11,12 @@ export default function Login(){
   const login = useLogin();
   const navigate = useNavigate();
 
+  const [showPopUp, setShowPopUp] = useState(false);
   
   const loginHandler = async ({email, password}) => {
     try {
       if(email === '' || password === ''){
-        return console.log('All fields are required!');
+        return setShowPopUp(true);
       }
 
       await login(email, password);
@@ -59,6 +62,7 @@ export default function Login(){
             </p>
           </div>
         </form>
+      {showPopUp && <PopUp isRequired={true}/>}
       </section>
     );
 }

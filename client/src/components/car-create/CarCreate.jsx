@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useCreateItem } from "../../hooks/useItems";
+import { useState } from "react";
+import PopUp from "../popUp/PopUp";
 
 const initialValues = {
   brand: '',
@@ -13,8 +15,18 @@ const initialValues = {
 export default function CarCreate(){
   const navigate = useNavigate();
    const createItem = useCreateItem();
+  const [showPopUp, setShowPopUp] = useState(false);
+
 
   const createHandler = async (values) => {
+    if(values.brand === '' ||
+        values.model === '' ||
+        values.engineCapacity === '' || 
+        values.imageUrl === '' || 
+        values.summary === ''){
+          return setShowPopUp(true);
+        }
+
     try {
       const {_id: itemId} = await createItem(values);
       navigate(`/items/${itemId}/details`);
@@ -82,6 +94,7 @@ export default function CarCreate(){
             <input className="btn submit" type="submit" value="Create Game" />
           </div>
         </form>
+        {showPopUp && <PopUp isRequired={true}/>}
       </section>
     );
 }
