@@ -1345,7 +1345,7 @@
                 "brand": "BMW",
                 "model": "535i",
                 "engineCapacity": "303",
-                "imageUrl": "https://mobistatic1.focus.bg/mobile/photosorg/633/1/big1/11677534522430633_lQ.jpg",
+                "imageUrl": "https://drive.google.com/thumbnail?id=1Kgn7GXDBpAFx3fdG0YmNvFbKPQUcMKck&sz=w1000",
                 "summary": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste dignissimos reiciendis labore, quod vero delectus. Ea architecto exercitationem odit aliquam hic maxime, cum nobis eligendi repudiandae, nam ad fuga ab est cupiditate quasi harum placeat repellat dolores dignissimos aspernatur illum. Nihil ea aut placeat doloremque ipsam fugiat obcaecati quidem inventore.",
                 "_createdOn": 1722376015461,
                 "_id": "0c3c7223-48f2-4715-868a-fb07f727e8be"
@@ -1355,7 +1355,7 @@
                 "brand": "Audi",
                 "model": "A7",
                 "engineCapacity": "320",
-                "imageUrl": "https://mobistatic1.focus.bg/mobile/photosorg/137/1/big1/11713888480372137_Ef.jpg",
+                "imageUrl": "https://drive.google.com/thumbnail?id=1Kg9f8zSx_Tqa911crD3s8c_ZcxXpgif2&sz=w1000",
                 "summary": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste dignissimos reiciendis labore, quod vero delectus. Ea architecto exercitationem odit aliquam hic maxime, cum nobis eligendi repudiandae, nam ad fuga ab est cupiditate quasi harum placeat repellat dolores dignissimos aspernatur illum. Nihil ea aut placeat doloremque ipsam fugiat obcaecati quidem inventore.",
                 "_createdOn": 1722376015452,
                 "_id": "1c3c7223-48f2-5162-868a-fb07f727e8be"
@@ -1365,10 +1365,20 @@
                 "brand": "Ford",
                 "model": "Ranger",
                 "engineCapacity": "250",
-                "imageUrl": "https://mobistatic4.focus.bg/mobile/photosorg/526/2/big1/21662475800475526_MN.jpg",
+                "imageUrl": "https://drive.google.com/thumbnail?id=1Kh1LYJe-88A2A7F5x73wyuUtmY2kxflr&sz=w1000",
                 "summary": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste dignissimos reiciendis labore, quod vero delectus. Ea architecto exercitationem odit aliquam hic maxime, cum nobis eligendi repudiandae, nam ad fuga ab est cupiditate quasi harum placeat repellat dolores dignissimos aspernatur illum. Nihil ea aut placeat doloremque ipsam fugiat obcaecati quidem inventore.",
                 "_createdOn": 1722376015452,
                 "_id": "2c3c7223-2f52-5162-868a-fb07f727e8be"
+            },
+            "2c3c7223-2f52-5162-868a-in99f727e8be": {
+                "_ownerId": "d069238f-5076-49d3-a27c-30c8954e4633",
+                "brand": "Mercedes",
+                "model": "C-class",
+                "engineCapacity": "245",
+                "imageUrl": "https://drive.google.com/thumbnail?id=1KhKKBPmoqK9ajaIpWsqFH00iJCS4ZHpG&sz=w1000",
+                "summary": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste dignissimos reiciendis labore, quod vero delectus. Ea architecto exercitationem odit aliquam hic maxime, cum nobis eligendi repudiandae, nam ad fuga ab est cupiditate quasi harum placeat repellat dolores dignissimos aspernatur illum. Nihil ea aut placeat doloremque ipsam fugiat obcaecati quidem inventore.",
+                "_createdOn": 1722372015452,
+                "_id": "2c3c7223-2f52-5162-868a-in99f727e8be"
             },
         }
     };

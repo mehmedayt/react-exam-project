@@ -51,14 +51,11 @@
 
 .allItems-info>img {
     margin-top: -10px;
-    /* border-radius: 90%; */
     height: 400px;
     position: relative;
-    /* top: 30px; */
-    /* right: 30px; */
     float: right;
     padding: 5px;
-    width: 400px;
+    width: 450px;
 }
 
 .allItems-info>h6 {
