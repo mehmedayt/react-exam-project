@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import catalogueAPI from "../../api/catalogue-api";
 import LatestItems from "./latestItems/LatestItems";
 import CustomMap from "./custom-map/CustomMap";
+import ScrollTop from "../scroll-top/ScrollTop";
 
 /* eslint-disable react/no-unknown-property */
 export default function Home() {
@@ -21,7 +22,6 @@ export default function Home() {
     <section id="welcome-world">
       <div className="welcome-message">
         <h1 class="btn-shine" target="_blank">Dream cars</h1>
-        {/* <h2>DREAM CARS</h2> */}
         <h3>Search your dream car</h3>
 
 
@@ -44,6 +44,7 @@ export default function Home() {
         <h1 className="our-location">Our Location</h1>
         <CustomMap />
       </div>
+      <ScrollTop/>
     </section>
   );
 }

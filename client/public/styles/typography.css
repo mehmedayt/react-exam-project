@@ -62,3 +62,17 @@ blockquote>cite {
     margin: 0.5em 2em;
     font-weight: bold;
 }
+
+body::-webkit-scrollbar {
+    width: 12px;               
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: lightblue;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: darkblue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid lightblue   /* creates padding around scroll thumb */
+  }

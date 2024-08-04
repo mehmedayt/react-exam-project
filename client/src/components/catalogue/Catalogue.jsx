@@ -3,6 +3,7 @@
 
 
 import { useGetAllItems } from "../../hooks/useItems";
+import ScrollTop from "../scroll-top/ScrollTop";
 
 import CarListItem from "./car-list-item/CarListItem";
 
@@ -12,6 +13,7 @@ export default function Catalogue() {
   return (
     <div>
       <h1 className="all-cars">All Cars</h1>
+      <h3 className="all-cars-sub">View Car Details or Send an Email to the Customer</h3>
     <section id="catalog-page">
 
         {items.length > 0
@@ -19,6 +21,7 @@ export default function Catalogue() {
         : <h3 className="no-articles">No articles yet</h3>
     }
     </section>
+    <ScrollTop/>
     </div>
   );
 }
