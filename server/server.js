@@ -1344,7 +1344,7 @@
                 "_ownerId": "d069238f-5076-49d3-a27c-30c8954e4633",
                 "brand": "BMW",
                 "model": "535i",
-                "engineCapacity": "303",
+                "engineCapacity": "550",
                 "imageUrl": "https://drive.google.com/thumbnail?id=1Kgn7GXDBpAFx3fdG0YmNvFbKPQUcMKck&sz=w1000",
                 "summary": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste dignissimos reiciendis labore, quod vero delectus. Ea architecto exercitationem odit aliquam hic maxime, cum nobis eligendi repudiandae, nam ad fuga ab est cupiditate quasi harum placeat repellat dolores dignissimos aspernatur illum. Nihil ea aut placeat doloremque ipsam fugiat obcaecati quidem inventore.",
                 "_createdOn": 1722376015461,

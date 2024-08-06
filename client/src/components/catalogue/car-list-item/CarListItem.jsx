@@ -6,13 +6,17 @@ export default function CarListItem ({
     _id,    
     brand,
     model,
+    engineCapacity,
     imageUrl,
 }) {
     return(
         <div className="allItems">
         <div className="allItems-info">
           <img src={imageUrl} />
+          {Number(engineCapacity) > 500 ? 
           <img src="../../public/images/vip.webp" className="vip"/>
+           : ''
+          }
           <h6>Car model: {model}</h6>
           <h2>Car brand: {brand}</h2>
           <Link to={`/items/${_id}/details`} className="details-button">
