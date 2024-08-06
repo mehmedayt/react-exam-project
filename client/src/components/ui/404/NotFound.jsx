@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 
 import { Link } from "react-router-dom";
-import '../../../public/styles/not-found.css';
+import '../../../../public/styles/not-found.css';
 
 
 export default function NotFound() {

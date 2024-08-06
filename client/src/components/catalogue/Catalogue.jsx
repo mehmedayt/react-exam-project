@@ -3,7 +3,7 @@
 
 
 import { useGetAllItems } from "../../hooks/useItems";
-import ScrollTop from "../scroll-top/ScrollTop";
+import ScrollTop from "../ui/scroll-top/ScrollTop";
 
 import CarListItem from "./car-list-item/CarListItem";
 

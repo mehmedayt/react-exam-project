@@ -5,7 +5,8 @@ import { useForm } from "../../hooks/useForm";
 import { useGetOneItems } from "../../hooks/useItems";
 import catalogueAPI from "../../api/catalogue-api";
 import { useState } from "react";
-import PopUp from "../popUp/PopUp";
+import PopUp from "../ui/popUp/PopUp";
+import Spinner from "../ui/spinner/Spinner";
 
 export default function CarEdit() {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function CarEdit() {
     changeHandler,
      submitHandler,
       values,
+      spinner
     } = useForm( item, async (values) => {
       
       if(values.brand === '' ||
@@ -42,7 +44,8 @@ export default function CarEdit() {
   
   return (
     <section id="edit-page" className="auth">
-      <form id="edit" onSubmit={submitHandler}>
+          {spinner && <Spinner/>}
+          <form id="edit" onSubmit={submitHandler}>
         <div className="container edit-container">
           <h1>Edit Game</h1>
           <label htmlFor="leg-brand">Legendary brand:</label>

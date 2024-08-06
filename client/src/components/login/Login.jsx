@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useLogin } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
-import PopUp from "../popUp/PopUp";
+import PopUp from "../ui/popUp/PopUp";
 import { useState } from "react";
+import Spinner from "../ui/spinner/Spinner";
 
 /* eslint-disable react/no-unescaped-entities */
 const initialValues = {email: '', password: ''};
@@ -33,10 +34,12 @@ export default function Login(){
     values,
      changeHandler,
      submitHandler, 
+     spinner,
   } = useForm( initialValues, loginHandler);
 
     return(
         <section id="login-page" className="auth">
+          {spinner && <Spinner/>}
         <form id="login" onSubmit={submitHandler}>
           <div className="container">
             <div className="brand-logo"></div>

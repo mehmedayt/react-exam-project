@@ -13,9 +13,10 @@ import Footer from './components/footer/Footer';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Terms from './components/terms/Terms';
-import NotFound from './components/404/NotFound';
+import NotFound from './components/ui/404/NotFound';
 
 import { AuthContextProvider } from './context/AuthContext';
+// import Spinner from './components/ui/spinner/Spinner';
 
 function App() {
     const location = useLocation();
@@ -44,8 +45,8 @@ function App() {
                         <Route path='/404' element={<NotFound />} />
                         <Route path='*' element={<Navigate to="/404" replace />} />
                     </Routes>
+                  {/* <Spinner/> */}
                 </main>
-                
                 {!isNotFoundPage && <Footer />}
             </div>
         </AuthContextProvider>

@@ -6,7 +6,8 @@ import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../context/AuthContext";
 import { useGetAllComments, useCreateComment } from "../../hooks/useComments";
 import catalogueAPI from "../../api/catalogue-api";
-import PopUp from "../popUp/PopUp";
+import PopUp from "../ui/popUp/PopUp";
+import Spinner from "../ui/spinner/Spinner";
 
 const initialValues = {
   comment: "",
@@ -23,7 +24,7 @@ export default function CarDetails() {
   const [showPopUp, setShowPopUp] = useState(false);
   const [popMessage, setPopMassage] = useState("");
 
-  const { changeHandler, submitHandler, values } = useForm(
+  const { changeHandler, submitHandler, values, spinner } = useForm(
     initialValues,
     async ({ comment }) => {
       try {
@@ -70,6 +71,7 @@ export default function CarDetails() {
 
   return (
     <section id="game-details">
+          {spinner && <Spinner/>}
       <h1>Car Details</h1>
       <div className="info-section">
         <div className="game-header">

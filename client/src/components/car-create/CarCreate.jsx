@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useCreateItem } from "../../hooks/useItems";
 import { useState } from "react";
-import PopUp from "../popUp/PopUp";
+import PopUp from "../ui/popUp/PopUp";
+import Spinner from "../ui/spinner/Spinner";
 
 const initialValues = {
   brand: '',
@@ -42,11 +43,13 @@ export default function CarCreate(){
     values,
     changeHandler,
     submitHandler,
+    spinner
   } = useForm(initialValues, createHandler);
 
     return(
         <section id="create-page" className="auth">
-        <form id="create" onSubmit={submitHandler}>
+          {spinner && <Spinner/>}
+          <form id="create" onSubmit={submitHandler}>
           <div className="container create-container">
             <h1>Create AD</h1>
             <label htmlFor="leg-brand">Car brand:</label>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export function useForm(initialValues, submitCallback) {
   const [values, setValues] = useState(initialValues);
+  const [spinner, setSpinner] = useState(false);
 
   useEffect(() => {
     setValues(initialValues);
@@ -17,9 +18,11 @@ export function useForm(initialValues, submitCallback) {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setSpinner(true);
 
     await submitCallback(values);
 
+    setSpinner(false);
     setValues(initialValues);
   };
 
@@ -27,5 +30,6 @@ export function useForm(initialValues, submitCallback) {
     values,
     changeHandler,
     submitHandler,
+    spinner
   };
 }

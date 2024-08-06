@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRegister } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
 import { useState } from "react";
-import PopUp from "../popUp/PopUp";
+import PopUp from "../ui/popUp/PopUp";
+import Spinner from "../ui/spinner/Spinner";
 
 const initialValues = { email: '', password: '', 'confirm-password': ''};
 
@@ -41,11 +42,13 @@ export default function Register(){
     values,
     changeHandler,
     submitHandler,
+    spinner
   } = useForm(initialValues, registerHandler);
 
     return(
         <section id="register-page" className="content auth">
-        <form id="register" onSubmit={submitHandler}>
+          {spinner && <Spinner/>}
+          <form id="register" onSubmit={submitHandler}>
           <div className="container">
             <div className="brand-logo"></div>
             <h1>Register</h1>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import catalogueAPI from "../../api/catalogue-api";
 import LatestItems from "./latestItems/LatestItems";
 import CustomMap from "./custom-map/CustomMap";
-import ScrollTop from "../scroll-top/ScrollTop";
+import ScrollTop from "../ui/scroll-top/ScrollTop";
 
 /* eslint-disable react/no-unknown-property */
 export default function Home() {
