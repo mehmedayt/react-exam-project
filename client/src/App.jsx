@@ -16,6 +16,7 @@ import Terms from './components/terms/Terms';
 import NotFound from './components/ui/404/NotFound';
 
 import { AuthContextProvider } from './context/AuthContext';
+import PublicGuard from './components/common/PublicGuard';
 // import Spinner from './components/ui/spinner/Spinner';
 
 function App() {
@@ -30,8 +31,10 @@ function App() {
                 <main id="main-content">
                     <Routes>
                         <Route path='/' element={<Home />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/register' element={<Register />} />
+                        <Route element={<PublicGuard/>}>
+                            <Route path='/login' element={<Login />} />
+                            <Route path='/register' element={<Register />} />
+                        </Route>
                         <Route path='/logout' element={<Logout />} />
                         <Route path='/catalogue' element={<Catalogue />} />
                         <Route path='/items/:itemId/details' element={<CarDetails />} />

@@ -83,12 +83,8 @@ export default function CarDetails() {
 
         <p className="text">{item.summary}</p>
 
-        {/* <!-- Bonus ( for Guests and Users ) --> */}
         <div className="details-comments">
           <h2>Comments:</h2>
-          {/* <!-- list all comments for current game (If any) --> */}
-
-          {/* <!-- Display paragraph: If there are no games in the database --> */}
 
           <ul>
             {comments.map((comment) => (
@@ -102,7 +98,6 @@ export default function CarDetails() {
           {comments.length == 0 && <p className="no-comment">No comments.</p>}
         </div>
 
-        {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
         {isOwner && (
           <div className="buttons">
             <Link to={`/items/${itemId}/edit`} className="button">
@@ -115,8 +110,6 @@ export default function CarDetails() {
         )}
       </div>
 
-      {/* <!-- Bonus --> */}
-      {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
 
       {isAuthenticated && (
         <article className="create-comment">
