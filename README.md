@@ -1,58 +1,70 @@
-# react-exam-project
-Softuni React Course Personal Project
+# Dream-Cars
 
-## 1. Initialize Project
-* Initialize git repo
-* Add server
-* Add base vite react project as client
-* CleanUp client
-* Add project resources
-* Convert html to jsx
-* Separete html into components
-## 2. React Router
-* Install react-router-dom
-* Setup react-router-dom
-* Add routes in App.jsx
-* Add links in the navigation
-## 3. Create Service Layer
-* Service layer architecture
-* Abstract requester
-* Add catalogue api
-## 4. Page implementations
-* Catalogue
-* Details
-    * Details link
-    * Details route
-    * Api function - getOne
-    * Comments
-* Home - Latest items
-## 5. Comments
-* Create service for nested resource comments
-* Post comments to server
-* Read comments from server
-* Add comments in the component
-* Clear form
-## 6. API Hooks
-* Form hook
-* ItemAPI hooks
-* Comment hooks
-## 7. Authentication
-* Auth API
-    * Login
-    * Register
-    * Logout
-* Auth API hook
-* Auth state & context
-* Token managment
+## :pencil2: About The Project
+
+This is my project for the React course in SoftUni. It was crated with HTML, CSS, JavaScript, React, and practice server fomr SoftUni. It for users easly Buy and Sale cars.
+
+<br/>
+
+<img alt="dream-cars" src="./client/public/images/dream-cars.png" />
+
+<br/>
+
+## Installation and usage
+ 
+**Clone respository:**
+ 
+ ```
+ https://github.com/mehmedayt/react-exam-project.git
+ ```
+ 
+ * To run client app
+   <br/>
+ ```
+    cd client 
+    npm install
+    npm run dev
+ ```
+ * To run server app
+    <br/>
+ ```
+    cd server
+    npm install
+    node ./server.js
+ ```
+ 
+ <br/>
+
+# :earth_asia: Public
+
+The guest pages are:
+
+* Home
 * Login
 * Register
-* Logout
-## 8. UI Implementation
-* Dynamic navigation
-* Create item
-    * API function
-    * Hook
-    * Latest games
-## 9. Refactoring
-* Extract auth state from App component
-* Persist auth state
+* Car for sale
+* Details
+
+# :lock: Private
+
+The loggrd-in users are:
+
+* Sell my car
+* **Functionaly**
+  <br/>
+  :white_medium_small_square: Car - create, edit, delete.
+    <br/>
+  :white_medium_small_square: User - edit, delete.
+
+# :computer:  Built With
+
+## Back-end
+
+- Softuni Practice Server
+
+## Front-end
+
+- [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [React](https://reactjs.org/)
+- [Font Awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)

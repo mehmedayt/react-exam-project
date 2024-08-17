@@ -9,6 +9,7 @@ import CarDetails from './components/car-details/CarDetails';
 import Logout from './components/logout/Logout';
 import CarEdit from './components/car-edit/CarEdit';
 import PrivateGuard from './components/common/PrivateGuard';
+import PublicGuard from './components/common/PublicGuard';
 import Footer from './components/footer/Footer';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
@@ -16,7 +17,6 @@ import Terms from './components/terms/Terms';
 import NotFound from './components/ui/404/NotFound';
 
 import { AuthContextProvider } from './context/AuthContext';
-import PublicGuard from './components/common/PublicGuard';
 // import Spinner from './components/ui/spinner/Spinner';
 
 function App() {
